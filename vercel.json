@@ -1,6 +1,4 @@
 {
-  "buildCommand": "cd bunker-studios && npm install && npm run build",
-  "outputDirectory": "bunker-studios/dist",
   "rewrites": [
     {
       "source": "/(.*)",
