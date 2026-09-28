@@ -1,0 +1,32 @@
+:root {
+  --black: #0a0a0a;
+  --black-soft: #111111;
+  --gold: #C9A84C;
+  --gold-light: #D4AF37;
+  --white: #ffffff;
+  --gray: #cccccc;
+  --gray-dark: #888888;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --letter-wide: 0.25em;
+  --letter-wider: 0.4em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}

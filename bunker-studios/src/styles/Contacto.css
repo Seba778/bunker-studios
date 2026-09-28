@@ -1,0 +1,394 @@
+.contacto {
+  position: relative;
+  background-color: #050505;
+  padding: 120px 80px 140px;
+  overflow: hidden;
+}
+
+.contacto-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contacto-bg-glow-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
+  animation: ctGlow 9s ease-in-out infinite;
+}
+
+.contacto-bg-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37,211,102,0.04) 0%, transparent 65%);
+  animation: ctGlow 12s ease-in-out infinite reverse;
+}
+
+.contacto-bg-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+@keyframes ctGlow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Marco */
+.contacto-frame { position: absolute; inset: 20px; z-index: 1; pointer-events: none; }
+.ctf { position: absolute; width: 44px; height: 44px; }
+.ctf-tl { top: 0; left: 0; border-top: 1.5px solid rgba(201,168,76,0.25); border-left: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-tl::before { content: ''; position: absolute; top: -4px; left: -4px; width: 6px; height: 6px; border: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-tr { top: 0; right: 0; border-top: 1.5px solid rgba(201,168,76,0.25); border-right: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-tr::before { content: ''; position: absolute; top: -4px; right: -4px; width: 6px; height: 6px; border: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-bl { bottom: 0; left: 0; border-bottom: 1.5px solid rgba(201,168,76,0.25); border-left: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-bl::before { content: ''; position: absolute; bottom: -4px; left: -4px; width: 6px; height: 6px; border: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-br { bottom: 0; right: 0; border-bottom: 1.5px solid rgba(201,168,76,0.25); border-right: 1.5px solid rgba(201,168,76,0.25); }
+.ctf-br::before { content: ''; position: absolute; bottom: -4px; right: -4px; width: 6px; height: 6px; border: 1.5px solid rgba(201,168,76,0.25); }
+
+/* Inner */
+.contacto-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* Top — header + carta */
+.contacto-top {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Header izquierda */
+.contacto-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: #C9A84C;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border: 1px solid rgba(201,168,76,0.25);
+  background: rgba(201,168,76,0.04);
+  width: fit-content;
+}
+
+.contacto-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 6rem);
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.contacto-subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.contacto-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.9;
+  border-left: 2px solid rgba(201,168,76,0.3);
+  padding-left: 20px;
+  max-width: 500px;
+  /* Fix truncado: asegurar que el texto siempre se muestre completo */
+  overflow: visible;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Carta derecha */
+.contacto-carta-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contacto-carta-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-carta-glow {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+  animation: cartaGlow 5s ease-in-out infinite;
+}
+
+@keyframes cartaGlow {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+.contacto-carta-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 24px 60px rgba(0,0,0,0.9)) drop-shadow(0 0 30px rgba(201,168,76,0.08));
+  transition: filter 0.4s ease;
+}
+
+.contacto-carta-inner:hover .contacto-carta-img {
+  filter: drop-shadow(0 32px 80px rgba(0,0,0,0.95)) drop-shadow(0 0 50px rgba(201,168,76,0.15));
+}
+
+/* Cards */
+.contacto-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contacto-card {
+  position: relative;
+  border: 1px solid #151515;
+  padding: 42px 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.4s ease;
+  cursor: pointer;
+  /* Fix truncado: altura auto para que el contenido no se corte */
+  height: auto;
+  min-height: 0;
+}
+
+.contacto-card-wa { border-color: rgba(37,211,102,0.15); }
+.contacto-card-wa:hover {
+  border-color: rgba(37,211,102,0.4);
+  box-shadow: 0 20px 60px rgba(37,211,102,0.06);
+}
+.contacto-card-email:hover {
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 20px 60px rgba(201,168,76,0.06);
+}
+
+.contacto-card-bg-wa {
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(37,211,102,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.contacto-card-bg-email {
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.contacto-card-icon { width: 56px; height: 56px; flex-shrink: 0; }
+.contacto-card-icon svg { width: 56px; height: 56px; }
+
+.contacto-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  /* Fix: nunca truncar el contenido */
+  overflow: visible;
+  min-height: 0;
+}
+
+.contacto-card-plataforma {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.contacto-card-accion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.contacto-card-detalle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.8;
+  font-weight: 300;
+  /* Fix truncado */
+  overflow: visible;
+  display: block;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.contacto-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 22px;
+  border-top: 1px solid #111;
+  flex-wrap: wrap;
+  gap: 12px;
+  /* Siempre al final, nunca cortado */
+  flex-shrink: 0;
+}
+
+.contacto-card-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  transition: letter-spacing 0.3s ease;
+}
+
+.contacto-card:hover .contacto-card-cta { letter-spacing: 0.28em; }
+
+.contacto-card-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.56rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+.contacto-badge-wa {
+  color: #25D366;
+  background: rgba(37,211,102,0.08);
+  border: 1px solid rgba(37,211,102,0.2);
+}
+
+.contacto-badge-email {
+  color: #C9A84C;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  letter-spacing: 0.06em !important;
+  text-transform: none !important;
+}
+
+/* Info */
+.contacto-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid #111;
+}
+
+.contacto-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 30px 26px;
+  border-right: 1px solid #111;
+  transition: background 0.3s ease;
+}
+
+.contacto-info-item:last-child { border-right: none; }
+.contacto-info-item:hover { background: rgba(201,168,76,0.02); }
+
+.contacto-info-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+
+.contacto-info-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #cccccc;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.contacto-info-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 1100px) {
+  .contacto { padding: 80px 40px 100px; }
+  .contacto-top { grid-template-columns: 1fr; gap: 50px; }
+  .contacto-carta-img { max-width: 280px; }
+  .contacto-info { grid-template-columns: repeat(2, 1fr); }
+  .contacto-info-item:nth-child(2) { border-right: none; }
+  .contacto-info-item:nth-child(1),
+  .contacto-info-item:nth-child(2) { border-bottom: 1px solid #111; }
+}
+
+@media (max-width: 768px) {
+  .contacto { padding: 60px 24px 80px; }
+  .contacto-cards { grid-template-columns: 1fr; }
+  .contacto-info { grid-template-columns: 1fr; }
+  .contacto-info-item { border-right: none; border-bottom: 1px solid #111; }
+  .contacto-info-item:last-child { border-bottom: none; }
+
+  /* Cards en mobile: padding reducido y texto libre */
+  .contacto-card {
+    padding: 28px 24px;
+    gap: 20px;
+  }
+
+  .contacto-card-accion {
+    font-size: 1.2rem;
+  }
+
+  .contacto-card-detalle {
+    font-size: 0.85rem;
+  }
+
+  /* Titulo RESERVA en mobile */
+  .contacto-titulo {
+    font-size: clamp(2.2rem, 11vw, 4rem);
+  }
+}

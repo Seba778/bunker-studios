@@ -1,0 +1,124 @@
+.footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #1a1a1a;
+  padding: 60px 80px 40px;
+}
+
+.footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Top */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #e8c96a 0%, #C9A84C 40%, #a07830 70%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+
+.footer-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.45rem;
+  letter-spacing: 0.28em;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover { color: #C9A84C; }
+
+.footer-nav span {
+  color: #333;
+  font-size: 0.5rem;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-contact p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: #555;
+  text-transform: uppercase;
+}
+
+/* Divider */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #1e1e1e, transparent);
+}
+
+/* Bottom */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+.footer-disclaimer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.58rem;
+  color: #2a2a2a;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .footer { padding: 50px 40px 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .footer-contact { justify-content: flex-start; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .footer { padding: 40px 24px 28px; }
+}

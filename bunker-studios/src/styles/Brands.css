@@ -1,0 +1,107 @@
+.brands {
+  background-color: #080808;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  padding: 90px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.brands-content {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+
+.brands-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.4em;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.brands-tiktok {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brands-tiktok-nombre {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.brands-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.9;
+  max-width: 780px;
+  font-weight: 300;
+}
+
+.brands-texto strong {
+  color: #C9A84C;
+  font-weight: 600;
+}
+
+.brands-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-top: 36px;
+  border-top: 1px solid #111;
+  width: 100%;
+  justify-content: center;
+}
+
+.brands-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 60px;
+}
+
+.brands-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  background: linear-gradient(180deg, #e8c96a 0%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.brands-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: #555;
+  letter-spacing: 0.06em;
+  text-align: center;
+  max-width: 160px;
+  line-height: 1.5;
+}
+
+.brands-stat-sep {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, #222, transparent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .brands { padding: 60px 24px; }
+  .brands-stats { flex-direction: column; gap: 32px; }
+  .brands-stat-sep { width: 60px; height: 1px; }
+  .brands-stat { padding: 0; }
+}

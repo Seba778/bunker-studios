@@ -1,0 +1,348 @@
+.estudio {
+  position: relative;
+  background-color: #080808;
+  padding: 120px 80px 140px;
+  overflow: hidden;
+  border-top: 1px solid #0e0e0e;
+}
+
+.estudio-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.estudio-bg-glow {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
+  animation: estudioGlow 10s ease-in-out infinite;
+}
+
+@keyframes estudioGlow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.estudio-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* Header */
+.estudio-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 800px;
+}
+
+.estudio-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: #C9A84C;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border: 1px solid rgba(201,168,76,0.25);
+  background: rgba(201,168,76,0.04);
+  width: fit-content;
+}
+
+.estudio-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.estudio-titulo em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85em;
+  text-transform: none;
+  display: block;
+  background: linear-gradient(90deg, #e8c96a 0%, #C9A84C 50%, #a07830 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.estudio-subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.85;
+  border-left: 2px solid rgba(201,168,76,0.3);
+  padding-left: 20px;
+  max-width: 600px;
+}
+
+/* Grid de fotos — contenedor con altura fija */
+.estudio-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 580px;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Imagen principal */
+.estudio-img-main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.estudio-img-main img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: brightness(0.85);
+}
+
+.estudio-img-main:hover img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+/* Columna derecha */
+.estudio-col-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  height: 100%;
+}
+
+.estudio-img-sm {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.estudio-img-sm img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: brightness(0.85);
+}
+
+.estudio-img-sm:hover img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+/* Overlay */
+.estudio-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.75) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.estudio-img-main:hover .estudio-img-overlay,
+.estudio-img-sm:hover .estudio-img-overlay {
+  opacity: 0.6;
+}
+
+/* Label */
+.estudio-img-label {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.estudio-img-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C9A84C;
+  box-shadow: 0 0 6px rgba(201,168,76,0.8);
+  flex-shrink: 0;
+}
+
+.estudio-img-label p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  color: #C9A84C;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Features */
+.estudio-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid #111;
+}
+
+.estudio-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 28px;
+  border-right: 1px solid #111;
+  transition: background 0.3s ease;
+}
+
+.estudio-feature:last-child { border-right: none; }
+.estudio-feature:hover { background: rgba(201,168,76,0.02); }
+
+.estudio-feature-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.2);
+  line-height: 1;
+}
+
+.estudio-feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estudio-feature-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.estudio-feature-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* CTA */
+.estudio-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.estudio-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #000;
+  background: linear-gradient(135deg, #e8c96a 0%, #C9A84C 50%, #a07830 100%);
+  text-decoration: none;
+  padding: 18px 40px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.estudio-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+}
+
+.estudio-cta-sec {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #666;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.estudio-cta-sec:hover {
+  color: #C9A84C;
+  border-bottom-color: #C9A84C;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .estudio { padding: 80px 40px 100px; }
+
+  .estudio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .estudio-img-main {
+    height: 420px;
+  }
+
+  .estudio-col-right {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    gap: 12px;
+  }
+
+  .estudio-img-sm {
+    height: 260px;
+  }
+
+  .estudio-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .estudio-feature:nth-child(2) { border-right: none; }
+  .estudio-feature:nth-child(1),
+  .estudio-feature:nth-child(2) { border-bottom: 1px solid #111; }
+}
+
+@media (max-width: 768px) {
+  .estudio { padding: 60px 24px 80px; }
+
+  .estudio-img-main { height: 320px; }
+
+  .estudio-col-right {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .estudio-img-sm { height: 220px; }
+
+  .estudio-features { grid-template-columns: 1fr; }
+  .estudio-feature { border-right: none; border-bottom: 1px solid #111; }
+  .estudio-feature:last-child { border-bottom: none; }
+}
